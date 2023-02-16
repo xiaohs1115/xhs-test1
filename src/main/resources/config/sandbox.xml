@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SCF>
+    <Service name="hunterconfigure" id="2" maxThreadCount="50">
+        <Commmunication>
+            <SocketPool maxPakageSize="10485760" bufferSize="4096" minPoolSize="3" maxPoolSize="100" nagle="true" autoShrink="00:00:20" sendTimeout="00:00:20" receiveTimeout="00:01:00" waitTimeout="00:00:20" protected="false" />
+            <Protocol serialize="SCFV3" encoder="UTF-8" compressType="UnCompress" />
+        </Commmunication>
+        <Loadbalance>
+            <Server deadTimeout="00:00:10">
+                <add name="hunterconfigure1" host="10.167.92.216" port="16608" maxCurrentUser="100" />
+            </Server>
+        </Loadbalance>
+    </Service>
+</SCF>
